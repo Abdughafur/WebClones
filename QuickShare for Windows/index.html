@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="tg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Android - Quick Share</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="#" class="logo-container">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="133"
+                        height="22" viewBox="0 0 133 22">
+                        <path class="android-header__logo-default-text" fill="#202124"
+                            d="M80.0536 14.2601C80.0536 11.877 81.7747 9.99706 83.946 9.99706C86.1172 9.99706 87.7059 11.8241 87.7059 14.2601C87.7059 16.6961 86.0907 18.576 83.946 18.576C81.8012 18.576 80.0536 16.6696 80.0536 14.2601ZM72.5868 20.9061H75.6318V7.66697H72.5868V20.9061ZM72.1102 3.24509C72.1102 4.38366 73.0369 5.3104 74.1225 5.3104C75.2081 5.3104 76.1084 4.38366 76.1084 3.24509C76.1084 2.18596 75.2081 1.28569 74.1225 1.28569C73.0369 1.28569 72.1102 2.18596 72.1102 3.24509ZM60.1684 14.2336C60.1684 11.8505 61.916 9.99706 64.1667 9.99706C66.4173 9.99706 68.1649 11.8505 68.1649 14.2336C68.1649 16.6166 66.3908 18.576 64.1667 18.576C61.9425 18.576 60.1684 16.6431 60.1684 14.2336ZM57.0705 14.2336C57.0705 18.2053 60.1949 21.3298 64.1667 21.3298C68.1384 21.3298 71.2628 18.2053 71.2628 14.2336C71.2628 10.2618 68.1914 7.24331 64.1667 7.24331C60.142 7.24331 57.0705 10.2883 57.0705 14.2336ZM48.8357 20.9061H51.8807V13.9688C51.8807 11.2151 53.337 9.99706 55.773 9.99706C56.2232 9.99706 56.5674 10.0235 56.8851 10.103V7.42866C56.5674 7.32275 56.0114 7.24331 55.4024 7.24331C51.2717 7.24331 48.8357 9.83819 48.8357 13.9688V20.9061ZM36.6292 14.2601C36.6292 11.877 38.3503 9.99706 40.5216 9.99706C42.6928 9.99706 44.2815 11.8241 44.2815 14.2601C44.2815 16.6961 42.6663 18.576 40.5216 18.576C38.3768 18.576 36.6292 16.6696 36.6292 14.2601ZM33.5313 14.2601C33.5313 18.0994 36.6028 21.3298 40.2303 21.3298C41.7396 21.3298 43.1164 20.7208 43.9373 19.7146H44.0696V20.9061H47.1147V0.226562H44.0696V8.75258H43.9373C43.1429 7.79936 41.766 7.24331 40.2303 7.24331C36.5763 7.24331 33.5313 10.4472 33.5313 14.2601ZM20.1862 20.9061H23.2312V13.148C23.2312 11.2945 24.4757 9.99706 26.1968 9.99706C27.9179 9.99706 29.1624 11.2945 29.1624 13.148V20.9061H32.2074V13.148C32.2074 9.91762 29.639 7.24331 26.1968 7.24331C22.7546 7.24331 20.1862 9.91762 20.1862 13.148V20.9061ZM6.20569 12.9626L9.48899 3.56283H9.64786L12.9312 12.9626H6.20569ZM0.00976562 20.9061H3.45194L5.17303 15.9812H13.9638L15.6849 20.9061H19.1271L11.4749 0.226562H7.66199L0.00976562 20.9061ZM83.6547 21.3298C85.164 21.3298 86.5408 20.7208 87.3617 19.7146H87.494V20.9061H90.5391V0.226562H87.494V8.75258H87.3617C86.5673 7.79936 85.1904 7.24331 83.6547 7.24331C80.0007 7.24331 76.9557 10.4472 76.9557 14.2601C76.9557 18.0729 80.0272 21.3298 83.6547 21.3298Z">
+                        </path>
+                        <image class="android-header__logo-default-icon" x="97" y="2" width="36" height="21"
+                            xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJ0AAABgCAYAAAAHKnARAAAACXBIWXMAACxLAAAsSwGlPZapAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAADGSSURBVHgB7X0JmCVVlea5EfH2XCtroVA2AQHxA+wSRRBFsVVaafdxVLQR6ULZBBVRv5n5alodG8UWLWgEZRwbdVTaFgEbXAcdlKVhGoFuZVNkbaoqqyq39yJeRNw75+7nxsuSpbIg6yNP5nsvXkS8iBvn/vfsNwJgiZZoiZZoiZZoiZZoiXZ2YrDI6SM/+khnfGR8KJ/K84eXPzxz8QsvzmGJFozW3ry2tuvkruPqSx2m171iXQo7mBYt6D7643W7jrZap3fq7b+sx8lKASJLy/49U72pL0fLxffWPX9dH5boSdPaK9a1dx9vHNeut99bj+p7RQBxIYoHNs9NX/FoEn3xwiM/vgV2EC1K0J121YffMTG87KutWqPd4ylkPIc4iqAVNaEe1WA6nf3dTG/umPOOOec+WKInTKdf9eE1I0Mjl482R57d533olj0oOYdmXId21IJu3nt0cmbrcetff+5PYQfQogPdid877bDOUPMncZQMTfa3wlyRQi4KiCIGzagOE40xGK0NwWzW/X/ZHD/my28+dwMs0eOm93375ANGlo38rFVvrt7Sn4at+Qz0igwEgg4lnuLtaH0I8iL/w5ZHp4669K8uvh8WmBYV6NatWxfdts+9P4xbyWt7ZQbT/TlIixy4AAW6Rq0Gw40mrGgug+GkDd20d8XuIyvegnZIAUv0mHT8145vRuNDP2o2Gy+TYNuUTsFcvwd5WUJZcohZBO1aA0bqLajHNYCe+OY/vuvrx8ECUwKLiG4ZufOALd3Zlxd9Dimq1F5RKGYAgi6OI2BxCrP9DLr9HFa1xqGeJMfeu+nhN+FPL4MlekzKOvUzoqh/5NbeDGzsTuGgRsDlkscCCgQeshnB1oOp2iw0kzo0efLW9/yP93zwHz7xD5OwgBTBIqKU9w7q5lmrl/ZhqpehCu1DikzhBYcy59DvFzCdpTCZzsCGdAtu67Mi4h8/at1Ri2rwLEY67rvv20fE/Ky06LONvSnY0u/iAO5DJkGXa/6myF+5TvE9xUHf7zemhtIXwALTogLdXJqOF2kJLBcKbGmBow9HYV3E0MZXwiO0NUrFmC1ZF+2RWShj/oJdD3zux2GJ/iQVIM5AXi3biibLFEq4OdQWBQItKVGlipriMUc7JsUBLnlfw/URBqeylI/DAtOiAh3vsQcyHGG8BKVWC4EvXB+hrSGdiBZLgHGmPK0u2nozyLwUva8yLs5++/9euzcs0bz0rm+feFiZwPFddMqm8y6aLQg45G9dRNBBvjYlXxmTwIQS0JxBHtcQhHlWQlSIBXckFhXo6llyR7+bT3dRkiGuEHQ48kQJXfReSwRgCxnUhhgRCdBHe286z5RdggKww2r8vLUXra3BEgUkTY884V9CDnZm8h4OVlSpqC0i5K8EWx3Negk0yeOCCeW0IQRRw3DIe/lUZ2N0GywwLSrQ/fLcK++L0+iaTWlXiXr56iPY5gTaFzJsggxpY5yujsCTIzXDETubpyA9XR6Lv5gdg5fCEgW0ywH7nFjG4tAuz2BG8goHK7IUeYjaA+GFQXeYRW2BkTrIcRndNSXlpns9NLLZNy/7wmU9WGBaVKBDErWSfaU/V4gMmSPdKa6kHYcZZEwfpV6D1aCNIzQWDPolVyNXjmAcpxHaLJ9acio8ve2itaNljX8MAyLKFJFqNUcbOUHeoWqAGpotPYwSzOCgzpDHMn7WQEhEONjnuv3JkYJ9GXYALTbQwaqx5LqJvH5ZP8vRftPrciHFf6lGpEAQtpBhTRyN0vxIlZrtwUyBYzUpX7zLgft8FJZIEotGiv/KI76HNEFmMQAs1arUny3UFE3kYW54KnlbomqValVu6yLvG/14/S/P+entsANo0YHu2nXXpnv1Vv6XVo/NylCJBB7iTNl2U2pEFsgWmRJLcMRGUCATpcqQahaZGJcJ/9ibv/G+PeAZTu/85skH84Y4IS3RBCl6ikcFGso1lHINqSkQYFJzzOFLOhARrm/KtYhL0RMbl0PtUthBtOhAJ+mXF11196qifUGRoopFdSBRJ0OX0tiValYavlLNtpiWdlmJoEM1K5nLIzFca8KZ8AymY/75mEbRSD9XMD4uNYDkTY48itArbSu+aSk3jbxMwQSFUdV2UHtkWS7Givp/v+5vf/Z72EG0KEEnab/esr/ppGxDmWtPS0o7qWZnEHjSqUiktMMRK1WCtFNkukwZyiWq4ESsfdd33/s8eIbScHf161HiH90TciCmOChLFQ2QkkwCTmY/Z5UtVygpJ6VeB99lTLSRJddPtPa8BHYgxbBI6a5b7sp3O3TvrTOQHSvqGESKmQwfgVDZYpn8R7sE84Po46LXxRXzMKAn/6GR1Gu4tN+hx7zhslt/cO0zKi/7nq+/Z6LfiNbnUbnbFGYdpjFtKO1eKeWGQUu5PoJtM0+VapVSTtpxUsp15/J0ImucdMOnv38X7EBatJJO0r5i5NLhfnxd2ZeZCVDerJZ2OaraXLn7Ul1Ij0ugbSfV7Byqkh6GB8pEHN0buv+N8AyjtJ28myf8JTIQLJ2HFHkiTRDlPOAg5fg3jfxRzgNo56GJ/JMpsE4W//jWz/58h5QzUVrUoLt6/dXZajF8di0VqSi48rxK1LPSHtFufoluf6KAl6jYXanCAnPIbFQojCfwsVd9922j8Ayh4y5duxrjlZ+SDsJ0KU2NXGVvasYUidHxmkO1Oo0vjGwi3JjaVsPoOseR+mw+9EFQQ3vH0qKPad1+3i9u2P3Mw77yYNo7La7VVYBYyrgu1+5+XYIOMxVSAs5KaccxhIKgayQ9GKm1D15WjH4CD3M2bCcdtW5d8qLduiuTTrKsz/nKuBat5GW0QtT4skhEoyh1R9EEaGLkockY6ioZ3BciFyxK8XMavfBp7M/NjItN6H9vbPByci4tNrf60YZzTjoHt21/Z/c75WdQwndQS6r4ZR8HoUwbSsA1EV6KNzJEopNdqCEYDMkQCWaAhov6Wdeec8198BTQop8jIenQU15x4G87W3+VjUSjrIlmKNp3tTiCEQybIApgOK4DJs5gM8bV++h1tOoJjDfasLwxjMyuTzazxhHf+E8X3vl4z7fuinXt2bRYhWpgDaqqF+GqQ1jMnoOvUZmuZBFrRDIhjKYmkxzEF2OElXLRQUgoJ8gsqjijNNjxs8Am92SoDOH5EG67A8X4rSxlN0asvPMz7/zMVjzm4wbiO7974pp+i1/XLbPmxmwGtmY9VUHSwsT9MGsiwGLYgp7sZCFtuUIZxyN4MfWcQTqb37bX9Ogrrv/CjzbDU0A7BeiwQ9heZxxxygPDs+vZcA1YEqkX9jwsixuwqtaBBDGATgdMsxyiBEdwvQ7LGkMwXsdtefyTy950yau3dfiPXnLOsGhO7c3r/HAE9OFREh2MOmD/KMYjIcAjWcvHpJPC1Kf6MyBTmDPIY2yg3QZ7/l2BTgHRvriOCnGh8p0ISIFAfEAU4i5MPv+r6Itfs6n81597/+c2bguEmHNub1lZXpMn5ZGT/WnYnHVVeVJcIrAw4TXE6sre3VjMwRb07qWJUkPAjfIYenN9vnKufeLtn/n51+Apop0DdEhHHX9U847lMzduGRMHxQ20CtA/lYWdw5iLXZU0YTRuQqZ0GBrPEabLagmM1Bso7Uagg8Bs9aJXfONtX73WHk8WB3Rao4dDLfmLuMGORZDtJ4NVEmCRBBoCWlbSaqBFA4BjhnURWdaONRtQlMKBTgONm+8cASeU9ONqnfqONphM/cnlshCqlhBthw08FzeiFLxyJG18b92J6wKJ9J//ae0peaNYP1dgjCmbhpksgz6GmjoIqjHWUu3bnHdhI9p5Msgudeswgo5lCL5pdu3yDc979S0XP3Wz7HYa0En6szOPfu3t7Y1XY/gXonqspV0cwwSCamXSViXWcyKDKalsE/RsazVY3hyCXZrjqBObN3XugpdFo8P7sVr53qgBxyLI9o7qCKgkVhN/ZEl8jKEYqTnVnwzBgJFywEBrVAM8Bz5w3y3JZcGcmCOgM0Czks78WZAJA7xSgVGoT85LVdnLZUk5AlBkvIeX+MuI86/wLP/ZZJzkbHn3D3OQrng03aqkXDfPoVZoKYdcgbkyQynXgykZWMdGNGX4BAHZncln9+53Dr/+kzsm3bUt2qlAJ2nVWYdeuXEof33SqQMz0q6DYJPAW4FqVsbxpjDOPssKlHYxPKs9Cs8b2RMm6qMwuWnrBpRMK6NGBIkEWhwrkCVKqmmwKdAZgKk/ZsBmQBbBoLQLPq09x8DYckS12ncBBHAebFbaaeAJFd7Q30uVwpIALBT4SlXpK2QxYSP6/dj4yP4P9P4Dfjv9IGxKZ6HIBQwJlPSsgWAVSq1uRuDJip0YATeKbr2sDB6ejT977yf/73Y7WU+UdrqKjGdHo5+YzSaP7DfLURYnspZOqQwZQhnCUEAbnQppr8j4UwdV70QdQ6LocMyVPUDPc6WUaIkEG4KsJgEmQWcBZ14SWrEBmgYchBLO2W+hhLNr7CpRMcGEMfLkeqdwmVG5zACQWQByJ/VKWTWNpkOJTlKCpkMRYyahhp+Nso6/2D/H65YTlUaTFpoXPWw9Vwl9OXy6ItO1ctIwVgn9SIWeML/6yFg6dDE8DbRoMxLbokd+9fsNqw7bA6aj/FUMwYOepJJu8iUvpo8G8zSO6iFUrSuHhqHTaCnQNRCAjaQGdXw1UDLW8FXH9XIebU29YvWZyNRapEGZ4HYNRPyuujAaULGSBlSr6mD7nb4bCWmdEmCBNLXSVdmS4AeCtC8jlZTRy9oUMMso6TGzimaFLO8qlQ04k6bKc5VqexpBN8t1IFgm+2V1Tq+Xwy69zhm/OefHP4engXbK2rPxuHbR5iw/OasVu0UIIpn7kgWfUoVI4bJqpAO7LhuHMfReR1HltpOGKhDQ4NGdhpBSHm9kQMWcSt22+pQkpRIjOpQ6CQys2rTrfezEfrP7hpaNPqKM1AumR5B0VCMls7h6l+0u1XKpgSkHBko9LnSQt43BoaKOsBvmsugB/rhxM2zsdSFCE0NKz1jouJz0kJtZfOtb6y/9X3fADk8+zEs7naSTtOG6+9M9XrTPzHTUP3ZFs8U6TCerl3VasOeKZbDb2AQsaw5jcLij1I4sc5cTiaXEq6nixUQta0kWu5dzFoCFcbcKhcAKHQUaIiFWHHgrjgTt5iEKc63WvQTU7fKetJW69jPGl5TSLZTyIx2MUNYilGoydCJgDD0n6VhMd7PZsTR+9z9+8uv3wdNEO22V7ejM6Lf2bEdvx3jWqxrNOuw+MYSgG8L4XAslWxOzFE1ooXPRxFCKzFrUVA1Z7B0GsDab9T8BtPWvjy+EB0UIpEGyW+aDqRCDGwb3Y0QKhvs4ECpTMTbST0pnY+9JEMrwR2SkJXr00kSQpsNQrQkT7Q5s2DoDfDZXM792KTvfue3TP/klPI2004LukGfvvsdUc5ptmJiFkXFUoU2MxdUkyBoKbC0c2VK61Zm202R2NmLEQXCyhJKRQySo+1jQE/A4kgY8PBWb550FWQwG87gg4NSwvAZhTABB4ocRaNWrjIdYSXV5/UPoYHTbmIvd2BOrk9F7FnymzROknS5kcvIFJw/1u+LEosM/ycfQYe1gnBhjdvWkLkuatMMgPVjF8EQBTqvPyJjtLMgmWNICyahMKZ4Yc/G0qsWm9g9icIP2GyUWnCOM63mnpLo3CTbTgzJ9cqqwS1kxoqZr4h8u55hjzYTMveaQop0rb0CUY+yu6JWQTDFR28KubYrkvRd85II/wtNAOxXoPnjeB1d1RX5RPly+gY0ikBr4QsDVkkR5o8orlTabst0k0BIdDpkXbP6dgsQFbk1wN7TJfBor2F8tCBObG3Qc1Hmsg6C/eJvNvjPi4dqWMTASGYjzUmmvyXDIdx1eKfR8YQk+IUGH4JOgK+VMfgRnH19zJcRT4pFoJnn/V84+/0qAxyOuF452ktyrYCd//sw3Za3sq+U4Oq+Y9E8wFZYosMUKcDUT/rDhDm2/RT7OBoMxNXd4ByvuArd2PRduC4SBXftbTg5kpWGFscxKUQhaYQEFjAXgUt9YCECa/RhQvTb2Z9NnCoClekmp1xcadDlKvgIDywWCr8gw6T/Dy2Q2+VbRa53yP8/+7Aw8RbQzeK/spOWTn82Gi8+LcdaptRFgCLiajLnF5hXpV42oUxv/YkRGUKXE3af+053kswCF6TT/8sFauY2b9dxsk3VrhSwcMfuoLILJMpQqTlaSbAPJrxpJxc0626YgTQa6MECQdBlACP4BphlJqcFqA9yg10mnQ5ZYYzaxjMuD46h43WEvO+IX//LTGzbBU0CLWtKduv6ju2bR3BfLIfGX0GZ1qUqTmpZuSSw/Ex3YlZLNBnJtANfCbeAKwzSUECEItQql+VEgHW+lXdjtVcnGQRDl7VUpmHWhR0qcGqNOXWjEbmOVUDTzkrsqvQX58wOldLaekng8V+m0ojAqF229eJY9GuXRX4sku+bik3Zs8n/Req+nrj91r6w+dzU6DPuxZqRsN6tOJeDqRqWqWJvPFwTxNZt2ssuCAM5JE2O/8QrQlDoVFIyC2GsiPD7TiVapXZkIPU3tgninwZKCS2DjMTUNsAQ9z0Nv0+BjAvwy7q5CJFCRYsEA0+2JlCpmSvIriuwu3jhQ77iyTMpVYo7/oNFrnY3Xee4TqeV7orQo1evpXzx9TdaAnxbD5Z4OcLFO0FsJp0BnVSljgTqlcsWpUGGqOYwq1bZPSfKbRk0aCeHKjVzSvfrdAtRvU5Uh3vojKlw4+5AHatMD3R4DiPQV8yyDEEFNnr5GcHlejxTqLpk1zLsvguwrQy1CpmQjjtE/8Yof/frHrc6LWr+479r7OOwAWnTq9fTzz3xDt5V9q2iLNmuY5HyiQSedhHqsQyI2L2rzl9bQhooNJyp2kqvqqHQqBYN3KkinGolYrRyx79xIPRoeUcJHVKId4EMhUppFlWJQrzKZGUxWwjHngYfXbPO4kUqjeWCBawm9NqtyZRglQ8+2QJVb0uoV9G5ZBqLRTS4/IN3nHaeffnoGC0yLCXTs5PPPeGe/k19YtPiwKltKNOBUZYgMg8gUD2Yb5HLoKFjV4lUaBZsz0A3DtfrkgT0HptLD2XHCy4LAnjONFVXgCeu8UmsvtLgC5apABwAstP48iHR6SxLNB/v6vojsZz1eU/dn5ltZde6lpbdXpZOTyXInad9J0Km6PQ08dWeFFKA5V/tZnPF3rD99/UZYQFosoGMfOP+MD+ZD/U8XTd6WVcEqnWPq3VSCHoEm71EnwyM2UQ9VQ5qFcTQNLA260kq6isoKwCfsd/lrcxwGQbXvgF0nBARxMwhNoUC6QegMgJF0Fp5UkgEBXwBEI/kiIv1sdbP/Hnl5aSqZ6VCwg1BKOSnxZBBZmRdc33tYAQ8/WcYQeMl1nan6W849a+FuKL4oQHfahR86vtfKLsgbJQIOR7ZSqZFSp5EpsFQBX5ekjyo5Uwg9Uqc6wdtgVOKpbcSegnlULJUO5DsNvICAAclnvoARY25V2FoS0qg4ExZgkiITr/PJfg+6mHjorjrGHMNuA9BFADY+KCj0hPBxPBm/s3auUbUSdLxAZ6QP0OjWfxRnxbsuOPWCBbn38NMOulMuPP1NabP4dt4s6yLRN7SOXfm4DvAmkQZdzJIw4Duf+ghUq5Flwks0NfmOOBVK1QptL5cGnEAAa1USmE6rSjgHthBjhpjLVOhvDGiAVylBZn1MrxIjIsHttbo0HvNebUxA51SvAS0NGzErWU0rPI+4UqsqlCJtOwc8rlQt1xOFIO4zCbzvzzY2v/vS91w6B9tJT6v3etqXPnRY2s4vR8C1RIKMV3dQ14WJkZFmWrXGzktlNjPOwHiQNrxLgqxkuQxepYtbqaCtWbYGtg/6khgXnyegy01Q1wZsuTDHE2pijQWvcIFfvY8gnq/3gEPHhvOqZOb6+KaqWHuwxFFSnBSkKoYOilDq0zijdpXAecySOHGSOBnEqqo54gd00qHVr1tzzJXXXnutgO2gpy1O98HzPrpft939RtbIOzwWSo2qOFJEbRobHq04CPIL93ab7wTuPmmUn4Y5rM1m11kHQ/7OhkpoyAOIzSZI51IbSUkPTiSacyoglHKuqyoOBlGbAMLsq9dxs01G3ST4VFmnqTKx1cZcaJWqy96ZihXGQXzPOy5Wotr2U2moVbFX8UI3R/GrqKnHLPzVhlVbH8S1/w22g54WSff+L5yxZ7/dvzxr5fvLWVsabFq1qhlYEZmzEIUl4sL0lg9hDNphwfwCIJIOykDiFTa9BT5O5/+01Cld+kn47U7Kec/WgnkgBCP8y8Xp7KdliFn2UxIr8TxzfItjsJ+iouqdKtd7chCVGE5Igg5VO5gBAk9d0KEcI8cZf8kRrz3i/puuuvE38CTpKQfduovWtWeSuc+m7f6ryxqqNmyBmtCMQGN2PoKZQ6Dtt9gHfRnlYQg4q5IkyAqSL7UpIJ8/LTUQ5R/nwewrK+n01D8fQnEwDMAAHmiB3LOd5CUm/aOdqUBLpK0kDUoIAEttTkHtUUGtzAoJv9YpUCJe9XcruRlpF1QkPN1HSlnZY9HLjzjmyKtuuur6JxVKeUpBh41n3/mX73+438w/ktcl4ISa38Ai5iaaKEnn5i74GVmhrSGcTeYkj/wOpSvroWArDNB8FkJou8yA1Eo9e1zf4TyAChciAJj9tFKGDgKgUg+I3UR+JTxfnHPj2iCqgyqUenYwlCBIxoQ4QuCBbZ2Gqodvg4u0Ne7cRqzaZfd7uRyJFivYK1969GE/vfGaG5+wR/uUgm7zytm39hrpl7NGwXjMvQ1nZzjRWBT42JSdshdUhghi4Bv1qAKcvAwqRNQ6EwrwDoEHmzXc7XF9x1ZCKYJIAkFjewZGwgLTazKbQ6rahM4uJKD257IABg9yq3LBg9s6KEDayqkkNNcmKiClv6V/VJKHKT0z+GhbZH8wvgJ76AUvefWLv3nT1TeV8AToKXMkPvD3Hxjv1nrrs3rO5PxNYcputNVtR5cg4l268xJ4aDyXDGw9t5UqXHinoTQjWQLKTN5TVcPSQZERd1k9qySZ8M4FEInCgaqiip1k1rptgvk7R2ikqeMxuq+wvwljKNS3sOYX014R0OwFrZ2TP/BFAHrmF9c7qcFZmvCImmaJ2RoZQAdjKijzAbOpNJNBMxgRIw6NACLltRkCIgSc4octbk2wVc38iLhsfghXfwaeAD0lcTp5m639Vm36yWy7d1SOjZVT5JRalYFPO3+TzK73Qc7YxZc0s0WgsnxliHy2lYAtt22AB266DyYfmoSIR7BijxWw98v2hdEDJ2BzPq3mxEJllAN4NeSWzZJ6pwa/I7oHgZdZsOtZuHs1JerJDKhqHM/u7iS+2WZDv5Y5w802LC9GYeOvH4HN926CbldOLK/B6O5jMHTgGCQTdReGYvOk1uyxwcs8EwbyXr/UFIoXXIDR4OqxWa203u10W2/70ql/98/wOOmpAB07ef2pZ8+2+p/uNfqIBa5cccWvyAQyIz+Vzk8+pqET5iQcDYcoFYSjefbhGbj3n/4N7r3+buhnfRKzAqg36vD8Vx8Mz//rNTCZTal6Mm/OU5Dpb05QmfSXWeu30yWKDAu4AKFOrkGQPYFqVtYwis2fwWCVvWmKq9aowcgDNXjwit/D3KZZ1WZmBrLkjZwrsfLwXWHi8NVQ79Rd4BjAB559zjq0Q4WgnrrwcUWuwzJyYMsZZp1e4776JvbCCz7x+DIWO9ymO+lLpx6MNtzXevWsWUbGSmDaM5REFBcAkWS2opYWIroSJG5sOHn7qzsehVvXXw+zD03Dbs96NkxungxAJyPrj97zH8CQQRMHrVTSTtt3nqnVMIcFdaCChSDhDwh/4+yd0EpyxjyEBrwHfbjW2Xu698NzAoThFtnptQiaszW492v/Dg/d+yBs2LgRpmamIU1TtX3vvZ4DB+73PLj7+jth6v7N0N5zBGTlTvW+KUVQGV360i5rjoAP99AyLtUqpiyOsXqt3rr5qhuvfhyQ2LGgkw8Nnu7MfWGuka7JY/mADGOoM9NYqABPQHBBFjwl2JBG6TIB8jFNUsLdfsFNMN4ehQ+f+WEYGRmFW39zqwIaJXmcrfdvgRVrVgMMxTrFQzrSq1zwBrrZNlDyJMDZgAFsCPj8vpVtQrjzUbUtKi+AQfVvswUOmMi/uJ7A5msegnt+9Ts12NIshSzNoJf2IO2lquj1VUf/Oey7zz5wx/W3wfSjUzC037i6qaQ1S7w0t44TB1p7OF+8kUpza+eh3X3QEa955Q9e8IYDN9xy1S3wp2iHgm6/Nx10TNrI1qVJP1FSjvnRQY13CzhrnHO9KpAknKhVORLzbg53f/02HMFb4FN/8ym46+674JKvXaJG+Xy0bGQcGis6kOze1B6rZfqAJNMn58SRqAagwbXJSj1wgDWYAiKwPAjBq2V3XHI8K+UCEFb2MdxSt5/I5hBg/2czPHDPH0Pw4PXlRY5A3Ay/u/O3cNDzD4JavQ63XHsTNIbb0NpjCNwUSwglqAV3NQ7oHYrqkDAmRSRqtVLsiSrlcgTdnyx332GgO37d8U0Yjn7SraXjeVxowChX20u6wPquSD7qWdI8pVWxm256BH535e2qmrif5/Dd710Gc91t56LlNt5C++OQZUC9zuqfzTm6eJrcx9hqfAAQoYIE+xuAbbw8/DjZF6r7GNBSAALZDqAD01tRcv3x8n+Hfrfv1tsguiQp0WemURvcfjs8/MjDMDk5Cb2Nc7DysGcBq7PgmLRlAS9E9ZrotYJvJPYpE9G+zW7rDy894PB/veGGG2BbtMNCJs3Rznuna71nFXHpAec6kVZfMAUmaxzbznAelfCsth0ibw744I1/hH6/ryYRX/XDq5R991g0NTWFAC2gESfqBjViG/sFnSwNcwHb3Jf+wrsHYt7jMdJ5NMQSfgfnp4YtpM6E5mO/KGFurhvsJ5e1uazBJ/kyuWUS2FamJODUQ1tg8nebYJU0NSKdt2YuvysqLSZSmpgcfhdzBUxLyX6SQ79RO6kR1b+Fq7f59MQdIuk+8PcfG8/i3re7tWy4iAoVK3IBTCfhPNPVuwGhVxPcSR0r+VRVBAI0nU3h7u/cBkWqpbgN0D4W1fcZgdFDVurEtlUVFellU0BOpohtgNNG7LexntJgV4aSrer1eolSlYCeV/ImiX18bf3VQ/I59LAtYvZarX2M0i9qJLD8kF2cdqlKUNsUyn8gqhXEtq5LTQZ6VjQcbTr09WtuuPmHN8/bph0i6Vg2+2HMre5astLbYuA9QXmbeTengXnASRcc6IXJEWRlh/Ga5P/cTA+y2SdYuo/na+w5qs5VGsmq69lgXpDoJs0HOMvx+WQabFMkuuMZKc9IPE+YE/qgM1TubWIbagaYVPWy4qSdQG1FC/pThbNUqi1W/CYqV/J95pEp9axceZMdW/3CgjnCHk4iEMPhQFQS1fBBZYVwMYvxuHHykbqAr+PqLTAPLfjDS045/5Q9ukl+QsZydZM+OtOKJrd54CUJAwaTwjKpKzmadf2+vlWCrRpJZSyOPz7p5sp62hEMv2CFthO5t9sGpIkd+0bgVT1PUVlPDXxw2wWIyjLtMPsRHEu2xzTIgl7bs+AkvK3Lc141Lg+/dLVKJTabTVIWFhKVTs1GU2mIPi9IQYROE9oUoq9DtPc9JilH42zoqhudKtMTzY2Dh72exvmzOE8+vvZv57+z7IKDDk2ms9M4W52DLoHWCXgCPFPwyDnNl3L3crPoSc7U5lTdsnymWvLYce1VK1fB297yVmi32zD+6j1A3ZVdeHBZ28iDCojDwCEwsA0yfRiErgMSAvG6x3nDwkszCkaKvGrczwLctREAaL7XAr2N2ZZkogFr/mwNvO61r4Ph4aFtAk86XRMTExAN1zSPS1k1bPnKzTJ362i+uiSZCVsa5opcDa9sAUUfpV0/yk/D0877tKIFBd37/u7MZVmUv60fyfsH+fq1oI5MNtCOVm6XSXkRJ/Vv5qKtSizNceRNrqPRujrntm5euHqX1XDK+09WYYNiSEDjhSvdvAp7A5ugU6nUCoABRFIJp/5ECEkI41jUIoPKnhAs88q5qy9eAaXDqew8+VmPYex1e8Jt/3Y77LvvPvDmN75ZlftXSfJJzhlWE9b3GFY974AkwhpDV7UiBPkkYSTaHvBBY1uzKKVdFmfNpJm+67QvnTbQlgW16WLRO24mSpf3lZQrnDq0Hqm5fLB5ftchwpgNpuoVmO8c+0vHcPyrNWNoHbYKZq/w8akqzc3NwrnnfR7SdgHLTjgA4k6inrITx9Y2Uu8m4T6f7RaSIOkscEsC6A0kBtNgds/wWqi55qQosZsGjmDsQP8bzSNdEoY8O2gc6qWA8y+5ECaGxnVacR6LtIEpwbIpYOzQXdTxlG1r7Dmwdp2gaTfijbPgcoILUXc1MJXOpdq1BGlepbXsrE5Zk4/xDAzwBfNeZVyON6MvziXprtqes/VqHj6UBUJUGG+WqDTgFXVGpU2+rAZzD06B2NSftz1ZjnbfRAIjx+0H8aomtDFHGZsn34S3nqDtEkAdBEZAVJWn7juj9xeukBpALNxfQGVv33uCuPXC/KgKweq5pKoqpKRZ0YDaSB0mb35ATSGsAk6q1mXLJ4Af0oHxQ1YoXvgO8HasbxOAL/IMGjDvd2F450KvsoRexGP1fv3mF7z54DtplmLBQHfYaw87GkMkZ3WjlOWsdKCzoQ7dNuYlQRA2MUx3qkM4Q1qrIB8ysSBsNGtQPHdY3X9NPNzzxWvSCx5JoPOqZ8Po2/eG2ngDWvWamkPLaM9DZRCoN+FHL1QlEIRq2WXIqzG2MK1fgXTw4/D8wsQpqXQnAoaAtYqDWJXrYBwOB1drzUrgfdQyG1P9VHDdKIjHGpD8+UoYO3JXaNYSP8EJKgNPEFHgx6BZtY2BZbfRhgmp+VCll8myKBHfQdA5z2/B1Gteg3dnrGAF2EpdfRv56sBgTnwEV+MHHRPEMDegs7LPAtIcZ+X4CCRvfC7MIiPLBzAb0edQR+Y29xpTyfAE96knsVE3BBjC31lpXuCpD+b2taoThAUHg0BiiTDYS484CDu/hgJIDBxB72uzAhYjHCqaWOINAVeXyk1gdmZZA0bevg+IY/eA/oOzwKf6EA3VoLPXKAyNtqGJNp0eyOZIQphyMlu3x7StCMbgDwYcvTYPMmWqCOF5YWz3XGIhKV7e2FLbA7fcY3+5IKA7ed3JQ7OQvU7acvIRmCXzBqcuOCSdZy6g2n4LPPVgNhO0tHE5AF9oST05aZ6NNxowtAtKvZWjxIPUDLPPX4gYlRI2BcWA4t8KOdr1zLw7lWGOIog0BHJsRi+HSDxnDQoIhiGRKdqWJVuqABaCbvPWpG63vkZ5Ryt5vcrgR2ersf8yc/t/BrUoUi8gPFBtZhrYtn+4aai00NwAC0aO5YrtB9Jeo6l0JTeokFka9RuNRvwG3PZ5y5IF8V7zNn9NxvpjhXWabXmMlUucNFhQFURGu31Zpkjw0ZiUEKEXZSShqimL9DPC6u5lb0kR2m8B0EEEFRQAXoXp0erbFPxMdRB5OInwQVIfXiWwE34/aqK77fZ84MFOwehmjVGv2m4nQJS/V882w2uvGT7IdF89idSynA6gB5dw8T81sLkOY4mAz+BDO65/BDnX4DUyQY+t+VoaaZdH/Oj2XNtd7sKALipfjqpVB4PBpqvCWJMHFXPLjKoo8PtVQwbVujL6clKEgSkEBVPESLIe5th0NNoXCMpUC8BQHjFBO5hBaBp4KAlBJLq9RkZ9QbO/m+tnwUjPZxwZ2tFCBIHsAfAZaaSAZ2fSxX6Sk5Lolu0MPMi45WfVafO8DoaIAH8bDCADzhxDp9zAAE64WXcIvBefcMEJq+2RFgR0GE871uQfgJPMQ6gi2IAKcrKBSBZf3iPCSg8HFBEwR6kGrSf8J2mbgEBJDawBoIowXBOqW93GCKpq1JNLqwEBPB1s9LeCnt/bj0AHaqWNHmTh9VVbHoQuycW5uB9AYKbQ3CwFnGoLF65vbJ/J5UiEgRVlJ3NhACyPoZ3IQkm6Ylka88MDPm0PnbTupOdhMHjPQvipgKEkYoE9QP8sM9yHWQ7sN8sMIMd2HUN/Oz+QqsvVjqN1c4xIHmruKwmiFomUrihTe284Ooj89sqAY6GiDWWn70oxD8oEkcg+/QYDxMyJ3HUwb+gLyscqL9w5RXBYat/6QcJ8/7pBpo+ob1mh5smCdC95xN9ywjknqN9tN+hEi71Jprxkcr8EHuRSmWmALp3Z1iinV2af4wAEbARkRhK4c7uF+RhUbahfdLfDEcIHRoVvQ6gOhQMfVNqtt/s7JDmdx7YFeg9KJxErewVAJA6XoBIzEHWVK2VmbAxWDHipGAx0P8AHD0ntSxE4Ql6i+jvD2wbYPtPZDo2LIspfjKuHNce2g2Q5eiqKV+Yk3RUY5r7toXwbGOm60wRRLWTABepRVJaoxzqPYHCqhrZFg9pstJLD6dJQirpqFADfdka3+/Mzo+KtlLHXaX/LIDyQV05kNSVRBY0AyoOBA7trZR5M/sdQlWp2O9UmdIlKPQikNgM/O5lehQe6sPWTVsVCuVsSNw+W27YLdA/WHlyBovPAwgSBS1eNRUU/q/CHBcaou2ghBk/gh3dQ4UHLxIEcp7qkfweBHTN4fNoQKyFCaVyVoiGUaL8zcM8BBS8DobIvWGkHvptc4SVsQ1IPHMNfgi1U8OzyTpMDkN1ZkEngREVzsr/eSGzSgXb69gz2KSO8tJhAScfKBG3/18g9ti9Ox+I1fZausg6E83woopgHm20mA89kGw1yEoeMMOexBWARIWMByOh01hBAsGybwuhRIFR7ZkmYqmUGlbFs9hIq+A8B/IhEg4rHDCafafHgWsn8pehjUKAwcpd2CK8dQolOBZ2orBOuCZXrtoPQznkVVmL78K8O0rMA4faYganE9ORvG0ZipB3W4ZNCSSUNovKlay9au32gwwMdqepJhDYYbaoKrK0EoWRQN/6yas2xwH/akRS4IoPCKCTdr6rYkwWGMRmilbPZ1dUOClpsHvRmKaoMGgeziqlAtrhj2uwHg/Cu5np7eO16WQStHGg3GTGDwPQC3Kl5cyZ1NzPmJUFYEsBcW2QfxvYahGGwADK4CBc0ukAMcJKr88kgcWK1IOMvQU7Wtgt0JeMvczlWAzwqlez1Rs6GYZVSJNs5Xv3Z0emPUvW0fCe5SJIYTGnZfbw68KM7Moys/obNs2wHS/UhdpT1gcRktvts20DdGkN1umuP3hox76FaAFrJ5+W2H0QUcA54otLw6irCNyuphbuBnj2ul2j++EYpuwoUOxB1SZW9TjDr7S2OXAbZXZfMTjAVTuuzsjG0tfGcJw26d3/k3R2UcvtY74SbyRmC+dsj2MZqdUF+TD2rwN7y0+LsOgo0ylQnMbRuCLZVifZPZEel/ZnpSQoqCiavdqEi1bzTQNfRY/jOjoJzW/kl3N60cIqkuMBCghj1DCoGvl+sYlAw345A9prRSM0RbSvbe6b4c3nwEiayUN7r1BttnO9fywN9hyl5dwXxwicNuvrYyPKUbZ1wlSSiMmWNimLB/NOYgQXMpnlEEL4reAVwPnZXASGj4POsdW+uMkR4+8N1PTgIVMRDsAd9xhgFln1WjY3h0SPaowgzMUadxbYVmAtse1iBHwDu9xA8gce20wGS9K8HKWGNuaxQipnzCS9ZLdjcTsz/yPHSbGckHOAeSwDeNpfXW3IiSITuO1tbmTPx4icNurjkzy/iMuaM3GPX5bWIJDFf5RdnF1npbq6oOsWPBj2rjAzVa/AWqna7DzGALD8Zs0dilUQ7hMARQE0iIMOoEuCllg5zAGP23m+MtEOEFptWu0IBl4tKS0yDBwsFhOOrqPKChUJJ7qurRuzgMzxnrDLOzCC3qSzXZt+RjicA4O8ApdutbkPLRVjYYfhvXyolxvhBTxp0eVIcVLjEvlavICyz/dXYRii7yAISCMoE87+xjLONdQAT3tYAelFinqXB795S8ttYcBw7qhnZRiQc8wFQf7t9Ajfm7o0ePAHHDkK5DzcxQQcUYYLUFSlEbS3bobZNnFxYhV0gKqowkHDBnv6ETvWaWXeRbYhFJ/Ncourd38rMcUAfyY42t9ULAz8jsDzkScfp5I/93S19ZYG30Xw3KwNU35DOt1x4oOlyZw+0ILHvD+mCxzY5bU/HzX50Br5lc8jqCuM9W5wqo1tDYAIMKlAPyACkQLx1iBwo3cw0AAdm10VUhZN+p8BxfTpAlkkCnIliqhQsb53WoLy17+6nwvPc8dQ7hwzC/ahA0SrWX09EWC3nOts4LvoBo08KdDITkYtyf04my9jUl7ZXwJW60I4LKjCAgIOIJRbwT3jGgKiMWDKChWejRalX0RSCRKwQ4IYwChnJgMbe/eORVJ2aAVwM/gEi/mUfOOLjfQp4JhSjvUACUeH55DIgXliQUqvq9dvPSjjGXFpYnQIBT+ig9hEEAFpUQX9ma/Bce/xV+WshwkQfz6tXblTsk1KvVz58Zbzv2P6/zsrsgb7oJhnP4pSVUSmfCYk9IknduzpKGL6xehxH8oaHTMcIVDs52PahVYjYlPd0KpQHLK1EYEYcM+LNumGkfyeINnERWG1pWdEBXriaukR9m3zhZy5ERi0ZtchseCRmXlox+RwLErdToIiIowHmrMYnshJMTXsROpDkbwUrdKEqaPXm79kC2tQmHWTvHiyEsa4McnzQ3MgvP9btIjUdDWMitybyfotnrrmDv3yXsyfkQEqiWK4TiZztgDrYDDj5KfSDEyNnsCqbTWDOAQ07FET4jsaXyhkI/H1UFhDhVTfKRhTv0GfJLtESLdESLdESLdESLdESLdESLdESLdESLdESLdHjo/8PKT1mcWB+ES4AAAAASUVORK5CYII=">
+                        </image>
+                    </svg>
+                </a>
+                <div class="nav-links">
+                    <a href="#">About</a>
+                    <a href="#">Features</a>
+                    <a href="#">Devices</a>
+                    <a href="#">Learn</a>
+                    <a href="#">Gemini Intelligence</a>
+                </div>
+            </div>
+            <div class="nav-right">
+                <div class="search-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#202124" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </div>
+                <a href="#" class="btn btn-shop">Shop phones</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="hero-section">
+            <span class="hero-badge">
+                <span class="badge-contents">
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true" class="android-badge__icon icon--quick-share-icon" width="56" height="56">
+                        <defs>
+                            <symbol fill="none" viewBox="0 0 56 56" id="quick-share-icon"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="56" height="56" fill="#fff" rx="28"></rect>
+                                <path fill="#4285F4"
+                                    d="M43.93 27.913a1.567 1.567 0 0 1-1.557-1.4C41.615 19.163 35.435 13.62 28 13.62c-6.023 0-11.314 3.666-13.452 9.112h9.509l-.77-.768a1.384 1.384 0 0 1 0-1.96 1.394 1.394 0 0 1 1.968 0l3.32 3.302c.542.543.542 1.42 0 1.96l-3.317 3.305a1.4 1.4 0 0 1-1.968 0 1.384 1.384 0 0 1 0-1.96l.764-.762H12.536a1.751 1.751 0 0 1-1.301-.63 1.739 1.739 0 0 1-.31-1.414C12.864 15.972 19.884 10.5 28 10.5c9.047 0 16.567 6.746 17.491 15.692a1.56 1.56 0 0 1-1.4 1.709.984.984 0 0 1-.16.012Z">
+                                </path>
+                                <path fill="#4285F4"
+                                    d="M11.909 28.079a1.565 1.565 0 0 1 1.718 1.394c.026.262.06.522.102.779 1.108 7.029 7.113 12.127 14.274 12.127 6.026 0 11.316-3.666 13.454-9.117h-9.52l.776.773c.543.542.543 1.42 0 1.96a1.4 1.4 0 0 1-1.969 0l-3.319-3.305a1.384 1.384 0 0 1 0-1.96l3.32-3.302a1.394 1.394 0 0 1 1.968 0c.543.54.543 1.418 0 1.96l-.758.756h11.512c.481 0 1.003.256 1.3.63.298.376.424.945.31 1.411C43.143 40.025 36.12 45.5 28 45.5c-8.715 0-16.018-6.21-17.369-14.764-.05-.315-.09-.63-.122-.948a1.561 1.561 0 0 1 1.4-1.71Z">
+                                </path>
+                            </symbol>
+                        </defs>
+                        <use href="#quick-share-icon"></use>
+                    </svg>
+                    Quick Share for Windows
+                </span>
+            </span>
+            <h1>Wireless sharing with your PC,<br>made easy.</h1>
+            <p>
+                Send and receive photos, documents, and more between nearby Android devices<sup>1</sup> and Windows
+                PCs<sup>2</sup>
+                <br><br>
+                To get started, install Quick Share for Windows to your PC. Send yourself the link to download it.
+                <br>
+                By downloading Quick Share for Windows, you agree to the <a href="#">Google Terms of Service</a>. The <a
+                    href="#">Google Privacy Policy</a> describes how Google handles information from Quick Share for
+                Windows
+                <br>
+                <br>
+                If you have Samsung PC, please use Samsung's Quick Share app avaible from the <a href="#">Microsoft
+                    Store</a>
+            </p>
+            <a href="#" class="btn btn-black">Download for Windows<svg xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xmlns="http://www.w3.org/2000/svg" aria-label="download icon" class="android-cta__icon" width="24"
+                    height="24">
+                    <defs>
+                        <symbol viewBox="0 0 24 24" id="download-icon">
+                            <mask style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                                <path d="M0 0h24v24H0z"></path>
+                            </mask>
+                            <g>
+                                <path
+                                    d="M6.308 19.5c-.505 0-.933-.175-1.283-.525a1.745 1.745 0 0 1-.525-1.283V15H6v2.692c0 .077.032.148.096.212a.294.294 0 0 0 .212.096h11.384a.294.294 0 0 0 .212-.096.294.294 0 0 0 .096-.212V15h1.5v2.692c0 .505-.175.933-.525 1.283-.35.35-.778.525-1.283.525H6.308ZM12 15.615l-4.27-4.269 1.055-1.084 2.465 2.465v-8.4h1.5v8.4l2.465-2.465 1.054 1.084L12 15.616Z">
+                                </path>
+                            </g>
+                        </symbol>
+                    </defs>
+                    <use href="#download-icon"></use>
+                </svg></a>
+
+            <div class="hero-visual">
+                <video src="vids/20_03_BeTo_WinApp_Hero_Animation_Desktop.mp4" width="100%" height="100%"></video>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title-center">
+                <h2>Transfer with ease.</h2>
+                <p>With Quick Share, quickly transfer photos, videos, documents, audios files or entire folders between
+                    your Android devices and Windows desktops and laptops<sup>3</sup>
+            </div>
+            <div class="network-box">
+                <img src="pics/users.webp" alt="users">
+            </div>
+        </section>
+
+        <section class="feature-row" id="featRow">
+            <div class="feature-col-text">
+                <h3>Share how you want.</h3>
+                <p>Quick Share for Windows was designed with safety and privacy in mind. That means you have control
+                    over who can discover your device and send files, whether it's everyone, only your friends and
+                    family or just your own devices.</p>
+            </div>
+            <div class="feature-col-visual bg-gray">
+                <img src="pics/sec.png" alt="">
+            </div>
+        </section>
+
+        <section class="feature-row reverse">
+            <div class="feature-col-text">
+                <h3>View on a bigger screen.</h3>
+                <p>Whether you want to edit your photos on a larger screen or organize your digital folders, it's easy
+                    to transfer your files straight to your PC.
+                <ul>
+                    <li>
+                        Securely transfer photos, videos, documents and more straight tou your PC.
+                    </li>
+                    <li>
+                        You can even send entire folders with just a few taps.
+                    </li>
+                </ul>
+                </p>
+            </div>
+
+            <video src="vids/19_02_Windows_ReceivingFromContact.mp4" width="100%" height="100%"
+                class="feature-col-visual bg-blue"></video>
+
+        </section>
+
+        <section class="feature-row">
+            <div class="feature-col-text">
+                <h3>Take your files on the go.</h3>
+                <p>Make emailling yourself a thing of the past. Securely transfer files from your PC to your Android
+                    device and take them on the go.
+                <ul>
+                    <li>
+                        Send photos, screenshoots, videos and documents to your Android device using Quick Share.
+                    </li>
+                    <li>
+                        Easily send via drag-n-drop or right click and select "Send with Quick Share".
+                    </li>
+                </ul>
+                </p>
+            </div>
+
+            <video src="vids/18_01_BeTo_WinApp_PC_to_Android.mp4" width="50%" height="420px"></video>
+
+        </section>
+
+        <section class="steps-container">
+            <h2>Start sharing.</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-num">Step 1</div>
+                    <h4>Get the app</h4>
+                    <p>Download the app, then install it to your Windows PC.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">Step 2</div>
+                    <h4>Set perferences.</h4>
+                    <p>Sign into your Google account and set your Device Visibility perferences to choose who can share
+                        with you.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">Step 3</div>
+                    <h4>Start sharing.</h4>
+                    <p>Send and receive content effortlessly across your Android device and Windows PC.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div class="container">
+        <section class="faq-block">
+            <details>
+                <summary>
+                    What Windows computers are compatible with Quick Share?
+                    <svg class="icon--ico-arrow-round icon" width="22" height="13">
+                        <use href="#ico-arrow-round"></use>
+                    </svg>
+                </summary>
+                <div class="faq-content">
+                    Windows computers (i.e. desktops and laptops) running a 64-bit version of Windows 10 and up (or
+                    Windows 11 and up for ARM-based devices). Download Quick Share and ensure Wi-Fi and Bluetooth are
+                    enabled on your Windows PC.<br><br>
+                    Quick Share by Google is meant for non-Samsung PCs. If you have a Samsung PC please install Quick
+                    Share from Samsung from the <a href="#">Microsoft Store</a>. Quick Share by Google is no longer
+                    supported on Samsung
+                    PCs. You will be able to continue sharing with your existing contacts and devices through the
+                    Samsung app.
+                </div>
+            </details>
+
+            <details>
+                <summary>
+                    How do I connect my Android device to Quick Share for Windows? Do I need an app?
+                    <svg class="icon--ico-arrow-round icon" width="22" height="13">
+                        <use href="#ico-arrow-round"></use>
+                    </svg>
+                </summary>
+                <div class="faq-content">
+                    Quick Share is already installed on Android 6+ devices, so you do not need an additional app on your
+                    device.<br>
+                    For Windows, you will need to download and install the Quick Share app. Once it’s ready, you simply
+                    need to make sure it’s visible to your Android device, then start sharing.<br>
+                    Read our <a href="@">guidebook</a> for even more info on how to use Quick Share on Android.
+                </div>
+            </details>
+
+            <details>
+                <summary>
+                    How do I check which Android version my device is currently running?
+                    <svg class="icon--ico-arrow-round icon" width="22" height="13">
+                        <use href="#ico-arrow-round"></use>
+                    </svg>
+                </summary>
+                <div class="faq-content">
+                    You can check the Android version on your device's Settings app. Learn how to check and update your
+                    Android device in our <a href="#">help center</a>.
+                </div>
+            </details>
+
+            <details>
+                <summary>
+                    How close should my devices be to use Quick Share?
+                    <svg class="icon--ico-arrow-round icon" width="22" height="13">
+                        <use href="#ico-arrow-round"></use>
+                    </svg>
+                </summary>
+                <div class="faq-content">
+                    The devices should be close to each other, within 16 feet (5m).
+                </div>
+            </details>
+
+            <details>
+                <summary>
+                    Can I use Quick Share to send to friends or family outside of my own Google account?
+                    <svg class="icon--ico-arrow-round icon" width="22" height="13">
+                        <use href="#ico-arrow-round"></use>
+                    </svg>
+                </summary>
+                <div class="faq-content">
+                    Yes. You can send files to anyone that has Quick Share turned on, with their devices discoverable to
+                    you. After you choose their device as the receiver, they simply accept the transfer and the file
+                    will be sent over.
+                </div>
+            </details>
+
+            <details>
+                <summary>
+                    Is Quick Share secure? How would I protect my device from junk, spam or viruses?
+                    <svg class="icon--ico-arrow-round icon" width="22" height="13">
+                        <use href="#ico-arrow-round"></use>
+                    </svg>
+                </summary>
+                <div class="faq-content">
+                    You will always be asked to confirm the transfer before receiving a file from other users. You also
+                    have full control over who can discover and share with your device. All Quick Share transfers are
+                    protected by E2E encryption.
+                </div>
+            </details>
+
+            <details>
+                <summary>
+                    Where can I find support?
+                    <svg class="icon--ico-arrow-round icon" width="22" height="13">
+                        <use href="#ico-arrow-round"></use>
+                    </svg>
+                </summary>
+                <div class="faq-content">
+                    Learn more about the Quick Share app for Windows PCs in our <a href="#">Help Center</a>.
+                </div>
+            </details>
+
+            <details>
+                <summary>
+                    How do I provide feedback for Quick Share for Windows?
+                    <svg class="icon--ico-arrow-round icon" width="22" height="13">
+                        <use href="#ico-arrow-round"></use>
+                    </svg>
+                </summary>
+                <div class="faq-content">
+                    We’re actively working on improving our functionality and experience, and welcome any feedback you
+                    might have. Please enter them <a href="#">here</a>.
+                </div>
+            </details>
+        </section>
+    </div>
+
+    <div class="container">
+        <section class="promo-banner">
+            <video class="promo-visual" src="vids/Android_works_better_together.mp4">
+            </video>
+
+            <div class="promo-text">
+                <span class="promo-tag">Better Together</span>
+                <h2>Android works better together.</h2>
+                <p>Discover how your devices connect seamlessly to help you achieve more every single day.</p>
+                <a href="#" class="btn btn-black">Learn more</a>
+            </div>
+        </section>
+        <section class="promo-banner">
+            <div class="promo-visual-gradient">
+
+                <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="500"
+                    height="100" viewBox="0 0 75 24" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M66.2184 12.4427L71.5774 10.2177C71.2814 9.4687 70.3964 8.9457 69.3524 8.9457C68.0124 8.9457 66.1514 10.1267 66.2184 12.4427ZM72.5074 14.5997L74.5514 15.9617C73.8934 16.9387 72.3034 18.6187 69.5564 18.6187C66.1514 18.6187 63.6914 15.9847 63.6914 12.6247C63.6914 9.0597 66.1734 6.6297 69.2614 6.6297C72.3714 6.6297 73.8934 9.1047 74.3924 10.4447L74.6644 11.1257L66.6494 14.4407C67.2634 15.6437 68.2164 16.2567 69.5564 16.2567C70.8954 16.2567 71.8264 15.5987 72.5074 14.5997Z"
+                        fill="#fff" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M59.5195 18.2549H62.1535V0.635895H59.5195V18.2549Z"
+                        fill="#fff" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M55.2208 12.6468C55.2208 10.5358 53.8128 8.99079 52.0198 8.99079C50.2038 8.99079 48.6818 10.5358 48.6818 12.6468C48.6818 14.7358 50.2038 16.2568 52.0198 16.2568C53.8128 16.2568 55.2208 14.7358 55.2208 12.6468ZM57.5368 6.99279V17.7558C57.5368 22.1828 54.9258 23.9998 51.8378 23.9998C48.9318 23.9998 47.1838 22.0468 46.5248 20.4578L48.8178 19.5038C49.2268 20.4798 50.2258 21.6378 51.8378 21.6378C53.8128 21.6378 55.0398 20.4128 55.0398 18.1188V17.2558H54.9478C54.3578 17.9828 53.2228 18.6178 51.7928 18.6178C48.7958 18.6178 46.0488 16.0078 46.0488 12.6468C46.0488 9.26379 48.7958 6.62979 51.7928 6.62979C53.2228 6.62979 54.3578 7.26579 54.9478 7.96979H55.0398V6.99279H57.5368Z"
+                        fill="#fff" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M42.0395 12.6243C42.0395 10.4673 40.5015 8.9913 38.7175 8.9913C36.9345 8.9913 35.3955 10.4673 35.3955 12.6243C35.3955 14.7583 36.9345 16.2573 38.7175 16.2573C40.5015 16.2573 42.0395 14.7583 42.0395 12.6243ZM44.6255 12.6243C44.6255 16.0753 41.9725 18.6183 38.7175 18.6183C35.4625 18.6183 32.8105 16.0753 32.8105 12.6243C32.8105 9.1503 35.4625 6.6303 38.7175 6.6303C41.9725 6.6303 44.6255 9.1503 44.6255 12.6243Z"
+                        fill="#fff" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M28.7954 12.6243C28.7954 10.4673 27.2574 8.99128 25.4734 8.99128C23.6904 8.99128 22.1524 10.4673 22.1524 12.6243C22.1524 14.7583 23.6904 16.2573 25.4734 16.2573C27.2574 16.2573 28.7954 14.7583 28.7954 12.6243ZM31.3814 12.6243C31.3814 16.0753 28.7284 18.6183 25.4734 18.6183C22.2194 18.6183 19.5664 16.0753 19.5664 12.6243C19.5664 9.15028 22.2194 6.63028 25.4734 6.63028C28.7284 6.63028 31.3814 9.15028 31.3814 12.6243Z"
+                        fill="#fff" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M9.445 18.6184C4.314 18.6184 0 14.4414 0 9.3094C0 4.1784 4.314 0.000396729 9.445 0.000396729C12.284 0.000396729 14.304 1.1124 15.826 2.5654L14.032 4.3594C12.942 3.3374 11.466 2.5434 9.445 2.5434C5.699 2.5434 2.77 5.5634 2.77 9.3094C2.77 13.0554 5.699 16.0754 9.445 16.0754C11.875 16.0754 13.259 15.0994 14.145 14.2134C14.871 13.4874 15.349 12.4424 15.53 11.0124H9.445V8.4694H18.005C18.096 8.9234 18.142 9.4684 18.142 10.0584C18.142 11.9664 17.619 14.3274 15.939 16.0074C14.304 17.7104 12.215 18.6184 9.445 18.6184Z"
+                        fill="#fff" />
+                </svg>
+            </div>
+
+            <div class="promo-text">
+                <span class="promo-tag">Cloned by</span>
+                <h2>Abdughafur Khujzoda</h2>
+                <p>I Love Google.</p>
+                <a href="https://github.com/Abdughafur/" class="btn btn-black">GitHub</a>
+                <a href="mailto:abdughafur.2010.khujzoda@gmail.com" class="btn btn-black">Email</a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h5>Security</h5>
+                <ul>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Pysical safety</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Accessibilty</h5>
+                <ul>
+                    <li><a href="#">Vision features</a></li>
+                    <li><a href="#">Audio features</a></li>
+                    <li><a href="#">Mobility features</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Better Together</h5>
+                <ul>
+                    <li><a href="#">Overview</a></li>
+                    <li><a href="#">Google Cast</a></li>
+                    <li><a href="#">Fast Pair</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>More from Android</h5>
+                <ul>
+                    <li><a href="#">Android TV</a></li>
+                    <li><a href="#">Digital car key</a></li>
+                    <li><a href="#">Google Mobile Services(GMS)</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>For Enterprice</h5>
+                <ul>
+                    <li><a href="#">Overview</a></li>
+                    <li><a href="#">Enterprice devices</a></li>
+                    <li><a href="#">Enterprice support</a></li>
+                    <li><a href="#">Enterprice blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>For the press</h5>
+                <ul>
+                    <li><a href="#">Android blog</a></li>
+                    <li><a href="#">Press corner</a></li>
+                    <li><a href="#">Contact Press team</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>For Developers</h5>
+                <ul>
+                    <li><a href="#">Developers resources</a></li>
+                    <li><a href="#">Android Studio and SDK</a></li>
+                    <li><a href="#">Android Open Source Project</a></li>
+                    <li><a href="#">How Google Play works</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Support</h5>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Find My Device</a></li>
+                    <li><a href="#">Join user studies</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <img src="pics/android.png" alt="android-image">
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const vids = document.querySelectorAll('video');
+            vids.forEach(v => {
+                try {
+                    v.loop = true;
+                    v.muted = true;
+                    v.playsInline = true;
+                    v.setAttribute('playsinline', '');
+                    const playPromise = v.play();
+                    if (playPromise && playPromise.catch) playPromise.catch(() => { });
+                } catch (e) {
+                    
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
+<!---Cloned by Abdughafur--->
