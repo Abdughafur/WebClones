@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Company Info - Clone</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-logo">
+
+            <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="75" height="24"
+                viewBox="0 0 75 24" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M66.2184 12.4427L71.5774 10.2177C71.2814 9.4687 70.3964 8.9457 69.3524 8.9457C68.0124 8.9457 66.1514 10.1267 66.2184 12.4427ZM72.5074 14.5997L74.5514 15.9617C73.8934 16.9387 72.3034 18.6187 69.5564 18.6187C66.1514 18.6187 63.6914 15.9847 63.6914 12.6247C63.6914 9.0597 66.1734 6.6297 69.2614 6.6297C72.3714 6.6297 73.8934 9.1047 74.3924 10.4447L74.6644 11.1257L66.6494 14.4407C67.2634 15.6437 68.2164 16.2567 69.5564 16.2567C70.8954 16.2567 71.8264 15.5987 72.5074 14.5997Z"
+                    fill="#EA4335" />
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M59.5195 18.2549H62.1535V0.635895H59.5195V18.2549Z"
+                    fill="#34A853" />
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M55.2208 12.6468C55.2208 10.5358 53.8128 8.99079 52.0198 8.99079C50.2038 8.99079 48.6818 10.5358 48.6818 12.6468C48.6818 14.7358 50.2038 16.2568 52.0198 16.2568C53.8128 16.2568 55.2208 14.7358 55.2208 12.6468ZM57.5368 6.99279V17.7558C57.5368 22.1828 54.9258 23.9998 51.8378 23.9998C48.9318 23.9998 47.1838 22.0468 46.5248 20.4578L48.8178 19.5038C49.2268 20.4798 50.2258 21.6378 51.8378 21.6378C53.8128 21.6378 55.0398 20.4128 55.0398 18.1188V17.2558H54.9478C54.3578 17.9828 53.2228 18.6178 51.7928 18.6178C48.7958 18.6178 46.0488 16.0078 46.0488 12.6468C46.0488 9.26379 48.7958 6.62979 51.7928 6.62979C53.2228 6.62979 54.3578 7.26579 54.9478 7.96979H55.0398V6.99279H57.5368Z"
+                    fill="#4285F4" />
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M42.0395 12.6243C42.0395 10.4673 40.5015 8.9913 38.7175 8.9913C36.9345 8.9913 35.3955 10.4673 35.3955 12.6243C35.3955 14.7583 36.9345 16.2573 38.7175 16.2573C40.5015 16.2573 42.0395 14.7583 42.0395 12.6243ZM44.6255 12.6243C44.6255 16.0753 41.9725 18.6183 38.7175 18.6183C35.4625 18.6183 32.8105 16.0753 32.8105 12.6243C32.8105 9.1503 35.4625 6.6303 38.7175 6.6303C41.9725 6.6303 44.6255 9.1503 44.6255 12.6243Z"
+                    fill="#FBBC05" />
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M28.7954 12.6243C28.7954 10.4673 27.2574 8.99128 25.4734 8.99128C23.6904 8.99128 22.1524 10.4673 22.1524 12.6243C22.1524 14.7583 23.6904 16.2573 25.4734 16.2573C27.2574 16.2573 28.7954 14.7583 28.7954 12.6243ZM31.3814 12.6243C31.3814 16.0753 28.7284 18.6183 25.4734 18.6183C22.2194 18.6183 19.5664 16.0753 19.5664 12.6243C19.5664 9.15028 22.2194 6.63028 25.4734 6.63028C28.7284 6.63028 31.3814 9.15028 31.3814 12.6243Z"
+                    fill="#EA4335" />
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M9.445 18.6184C4.314 18.6184 0 14.4414 0 9.3094C0 4.1784 4.314 0.000396729 9.445 0.000396729C12.284 0.000396729 14.304 1.1124 15.826 2.5654L14.032 4.3594C12.942 3.3374 11.466 2.5434 9.445 2.5434C5.699 2.5434 2.77 5.5634 2.77 9.3094C2.77 13.0554 5.699 16.0754 9.445 16.0754C11.875 16.0754 13.259 15.0994 14.145 14.2134C14.871 13.4874 15.349 12.4424 15.53 11.0124H9.445V8.4694H18.005C18.096 8.9234 18.142 9.4684 18.142 10.0584C18.142 11.9664 17.619 14.3274 15.939 16.0074C14.304 17.7104 12.215 18.6184 9.445 18.6184Z"
+                    fill="#4285F4" />
+            </svg>
+        </div>
+        <div class="nav-links">
+            <a href="#">About</a>
+            <a href="#">Products</a>
+            <a href="#" class="active">Company Info</a>
+            <a href="#">News</a>
+        </div>
+    </nav>
+
+    <section class="hero-mosaic">
+        <img src="pics/hero.png" alt="">
+    </section>
+
+    <section class="mission-section container">
+        <h1 class="mission-text">
+            Our mission is to <span class="blue">organize</span> the world's <span class="red">information</span> and
+            make it <span class="green">universally</span> accessible and <span class="yellow">useful</span>
+        </h1>
+
+        <div class="mission-cards">
+            <a href="#" class="m-card">
+                <div class="m-card-content">
+                    <h3>Careers</h3>
+
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"
+                        role="presentation" aria-hidden="true"
+                        class="glue-icon glue-icon--arrow-forward glue-icon--24px" width="24" height="24">
+                        <defs>
+                            <symbol id="arrow-forward" viewBox="0 0 24 24">
+                                <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"></path>
+                            </symbol>
+                        </defs>
+                        <use xlink:href="#arrow-forward"></use>
+                    </svg>
+                </div>
+                <div class="m-card-image">
+                    <img src="pics/careers.png" alt="Careers">
+                </div>
+            </a>
+            <a href="#" class="m-card">
+                <div class="m-card-content">
+                    <h3>Locations</h3>
+
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"
+                        role="presentation" aria-hidden="true"
+                        class="glue-icon glue-icon--arrow-forward glue-icon--24px" width="24" height="24">
+                        <defs>
+                            <symbol id="arrow-forward" viewBox="0 0 24 24">
+                                <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"></path>
+                            </symbol>
+                        </defs>
+                        <use xlink:href="#arrow-forward"></use>
+                    </svg>
+                </div>
+                <div class="m-card-image">
+                    <img src="pics/locations.png" alt="Locations">
+                </div>
+            </a>
+            <a href="#" class="m-card">
+                <div class="m-card-content">
+                    <h3>Around the globe</h3>
+
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"
+                        role="presentation" aria-hidden="true"
+                        class="glue-icon glue-icon--arrow-forward glue-icon--24px" width="24" height="24">
+                        <defs>
+                            <symbol id="arrow-forward" viewBox="0 0 24 24">
+                                <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"></path>
+                            </symbol>
+                        </defs>
+                        <use xlink:href="#arrow-forward"></use>
+                    </svg>
+                </div>
+                <div class="m-card-image">
+                    <img src="pics/around.png" alt="Around the globe">
+                </div>
+            </a>
+            <a href="#" class="m-card">
+                <div class="m-card-content">
+                    <h3>Contact us</h3>
+
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"
+                        role="presentation" aria-hidden="true"
+                        class="glue-icon glue-icon--arrow-forward glue-icon--24px" width="24" height="24">
+                        <defs>
+                            <symbol id="arrow-forward" viewBox="0 0 24 24">
+                                <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"></path>
+                            </symbol>
+                        </defs>
+                        <use xlink:href="#arrow-forward"></use>
+                    </svg>
+                </div>
+                <div class="m-card-image">
+                    <img src="pics/contact.png" alt="Contact us">
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section class="research-section section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>Research and technology</h2>
+                <p>Our teams are working to solve complex challenge, advance the filed of AI and help as many people as
+                    possible.</p>
+            </div>
+
+            <div class="research-grid">
+                <div class="research-row-top">
+                    <a href="#" class="r-card">
+                        <div class="r-card-img row-top-img"><img src="pics/deepmid.png" alt="Google DeepMind"></div>
+                        <div class="r-card-info">
+                            <span>Google DeepMind</span>
+
+                            <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"
+                                role="presentation" aria-hidden="true"
+                                class="glue-icon glue-icon--open-in-new glue-icon--24px" width="24" height="24">
+                                <defs>
+                                    <symbol id="open-in-new" viewBox="0 0 24 24">
+                                        <path
+                                            d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z">
+                                        </path>
+                                    </symbol>
+                                </defs>
+                                <use xlink:href="#open-in-new"></use>
+                            </svg>
+                        </div>
+                    </a>
+                    <a href="#" class="r-card">
+                        <div class="r-card-img row-top-img"><img src="pics/research.png" alt="Google Research"></div>
+                        <div class="r-card-info">
+                            <span>Google Research</span>
+
+                            <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"
+                                role="presentation" aria-hidden="true"
+                                class="glue-icon glue-icon--open-in-new glue-icon--24px" width="24" height="24">
+                                <defs>
+                                    <symbol id="open-in-new" viewBox="0 0 24 24">
+                                        <path
+                                            d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z">
+                                        </path>
+                                    </symbol>
+                                </defs>
+                                <use xlink:href="#open-in-new"></use>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+                <div class="research-row-bottom">
+                    <a href="#" class="r-card">
+                        <div class="r-card-img row-bottom-img"><img src="pics/labs.png" alt="Google Labs"></div>
+                        <div class="r-card-info">
+                            <span>Google Labs</span>
+
+                            <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"
+                                role="presentation" aria-hidden="true"
+                                class="glue-icon glue-icon--open-in-new glue-icon--24px" width="24" height="24">
+                                <defs>
+                                    <symbol id="open-in-new" viewBox="0 0 24 24">
+                                        <path
+                                            d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z">
+                                        </path>
+                                    </symbol>
+                                </defs>
+                                <use xlink:href="#open-in-new"></use>
+                            </svg>
+                        </div>
+                    </a>
+                    <a href="#" class="r-card">
+                        <div class="r-card-img row-bottom-img"><img src="pics/dev.png" alt="Google for Developers">
+                        </div>
+                        <div class="r-card-info">
+                            <span>Google for Developers</span>
+
+                            <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"
+                                role="presentation" aria-hidden="true"
+                                class="glue-icon glue-icon--open-in-new glue-icon--24px" width="24" height="24">
+                                <defs>
+                                    <symbol id="open-in-new" viewBox="0 0 24 24">
+                                        <path
+                                            d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z">
+                                        </path>
+                                    </symbol>
+                                </defs>
+                                <use xlink:href="#open-in-new"></use>
+                            </svg>
+                        </div>
+                    </a>
+                    <a href="#" class="r-card">
+                        <div class="r-card-img row-bottom-img"><img src="pics/cloud.png" alt="Google Cloud"></div>
+                        <div class="r-card-info">
+                            <span>Google Cloud</span>
+
+                            <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"
+                                role="presentation" aria-hidden="true"
+                                class="glue-icon glue-icon--open-in-new glue-icon--24px" width="24" height="24">
+                                <defs>
+                                    <symbol id="open-in-new" viewBox="0 0 24 24">
+                                        <path
+                                            d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z">
+                                        </path>
+                                    </symbol>
+                                </defs>
+                                <use xlink:href="#open-in-new"></use>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding container">
+        <div class="split-feature">
+            <div class="split-text">
+                <h2>"We continue to approach the AI opportunity boldy, with a sense of excitement. We're also making
+                    sure we do it responsibly"</h2>
+                <p>Sundar Pichai, CEO of Google and Alphabet</p>
+                <a href="#" class="btn btn-primary">Read more from our CEO</a>
+            </div>
+            <div class="split-image">
+                <img src="pics/io.png" alt="Company History Impact">
+            </div>
+        </div>
+    </section>
+
+    <section class="mosaic-section container">
+        <div class="mosaic-grid">
+            <div class="mosaic-col">
+                <a href="#" class="mosaic-card bg-blue">
+                    <div class="card-img-wrapper">
+                        <img src="pics/goolgeplex.png" alt="Our Story">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-label">OUR STORY</span>
+                        <p class="card-text">Take a trip through Google’s history — from the garage to the Googleplex.
+                        </p>
+                        <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"
+                            role="presentation" aria-hidden="true"
+                            class="glue-icon glue-icon--open-in-new glue-icon--24px" width="24" height="24">
+                            <defs>
+                                <symbol id="open-in-new" viewBox="0 0 24 24">
+                                    <path
+                                        d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z">
+                                    </path>
+                                </symbol>
+                            </defs>
+                            <g>
+                                <path
+                                    d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z">
+                                </path>
+                            </g>
+                        </svg>
+                    </div>
+                </a>
+
+                <a href="#" class="mosaic-card bg-pink">
+                    <div class="card-content">
+                        <span class="material-symbols-outlined card-main-icon color-red">shield</span>
+                        <span class="card-label">PUBLIC POLICY</span>
+                        <p class="card-text">We're committed to working with governments, companies and communities to
+                            create a safe and resilient digital future.</p>
+                        <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"
+                            role="presentation" aria-hidden="true"
+                            class="glue-icon glue-icon--open-in-new glue-icon--24px" width="24" height="24">
+                            <defs>
+                                <symbol id="open-in-new" viewBox="0 0 24 24">
+                                    <path
+                                        d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z">
+                                    </path>
+                                </symbol>
+                            </defs>
+                            <g>
+                                <path
+                                    d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z">
+                                </path>
+                            </g>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+
+            <div class="mosaic-col">
+                <a href="#" class="mosaic-card bg-green">
+                    <div class="card-content">
+                        <span class="material-symbols-outlined card-main-icon color-green">group</span>
+                        <span class="card-label">SOCIAL IMPACT</span>
+                        <p class="card-text">Discover how we're using AI to help solve society's biggest challenges.</p>
+                        <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"
+                            role="presentation" aria-hidden="true"
+                            class="glue-icon glue-icon--open-in-new glue-icon--24px" width="24" height="24">
+                            <defs>
+                                <symbol id="open-in-new" viewBox="0 0 24 24">
+                                    <path
+                                        d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z">
+                                    </path>
+                                </symbol>
+                            </defs>
+                            <g>
+                                <path
+                                    d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z">
+                                </path>
+                            </g>
+                        </svg>
+                    </div>
+                </a>
+
+                <a href="#" class="mosaic-card bg-yellow">
+                    <div class="card-img-wrapper">
+                        <img src="pics/com.png" alt="Commitments">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-label">COMMITMENTS</span>
+                        <p class="card-text">From protecting users to expanding opportunity, learn more about our values
+                            and priorities.</p>
+                        <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"
+                            role="presentation" aria-hidden="true"
+                            class="glue-icon glue-icon--open-in-new glue-icon--24px" width="24" height="24">
+                            <defs>
+                                <symbol id="open-in-new" viewBox="0 0 24 24">
+                                    <path
+                                        d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z">
+                                    </path>
+                                </symbol>
+                            </defs>
+                            <g>
+                                <path
+                                    d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z">
+                                </path>
+                            </g>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding container">
+        <div class="split-feature split-reverse">
+            <div class="split-text">
+                <h2>Grow with Google</h2>
+                <p>We provide free tools and training to help anyone grow their skills, career, or business.</p>
+                <a href="#" class="btn btn-primary">Get started</a>
+            </div>
+            <div class="split-image">
+                <img src="pics/grow.png" alt="Grow with Google User">
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding container">
+        <div class="section-header">
+            <h2>Outreach and initiatives</h2>
+            <p>See more of how we're working to support the communities where we operate.</p>
+        </div>
+
+        <div class="outreach-grid">
+            <a href="#" class="o-card-main">
+                <div class="o-card-main-img">
+                    <img src="pics/sustainability.png" alt="Sustainability Campus">
+                </div>
+                <div class="o-card-main-text">
+                    <div>
+                        <h3>Sustainability</h3>
+                        <p>Learn how we're operating sustainably to protect the environment.</p>
+                    </div>
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"
+                        role="presentation" aria-hidden="true" class="glue-icon glue-icon--open-in-new glue-icon--24px"
+                        width="24" height="24">
+                        <defs>
+                            <symbol id="open-in-new" viewBox="0 0 24 24">
+                                <path
+                                    d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z">
+                                </path>
+                            </symbol>
+                            <symbol id="open-in-new" viewBox="0 0 24 24">
+                                <path
+                                    d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z">
+                                </path>
+                            </symbol>
+                        </defs>
+                        <g>
+                            <path
+                                d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z">
+                            </path>
+                        </g>
+                    </svg>
+                </div>
+            </a>
+
+            <div class="o-stack">
+                <a href="#" class="o-card-small">
+                    <div class="o-card-small-img">
+                        <img src="pics/google.org.png" alt="Google.org">
+                    </div>
+                    <div class="o-card-small-text">
+                        <h3>Google.org</h3>
+                        <p>See how we bring the best of Google to help solve some of humanity's biggest challenges.</p>
+                        <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"
+                            role="presentation" aria-hidden="true"
+                            class="glue-icon glue-icon--open-in-new glue-icon--24px" width="24" height="24">
+                            <defs>
+                                <symbol id="open-in-new" viewBox="0 0 24 24">
+                                    <path
+                                        d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z">
+                                    </path>
+                                </symbol>
+                                <symbol id="open-in-new" viewBox="0 0 24 24">
+                                    <path
+                                        d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z">
+                                    </path>
+                                </symbol>
+                            </defs>
+                            <g>
+                                <path
+                                    d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z">
+                                </path>
+                            </g>
+                        </svg>
+                    </div>
+                </a>
+                <a href="#" class="o-card-small">
+                    <div class="o-card-small-img">
+                        <img src="pics/accessibility.png" alt="Accessibility">
+                    </div>
+                    <div class="o-card-small-text">
+                        <h3>Accessibility</h3>
+                        <p>Learn about our commitment to build products for, and with, people with disabilities.</p>
+                        <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"
+                            role="presentation" aria-hidden="true"
+                            class="glue-icon glue-icon--open-in-new glue-icon--24px" width="24" height="24">
+                            <defs>
+                                <symbol id="open-in-new" viewBox="0 0 24 24">
+                                    <path
+                                        d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z">
+                                    </path>
+                                </symbol>
+                                <symbol id="open-in-new" viewBox="0 0 24 24">
+                                    <path
+                                        d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z">
+                                    </path>
+                                </symbol>
+                            </defs>
+                            <g>
+                                <path
+                                    d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z">
+                                </path>
+                            </g>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="ir-section container text-center">
+        <div class="ir-content">
+            <h2>Alphabet Investor Relations</h2>
+            <p>See Alphabet's investor relations website.</p>
+            <a href="#" class="btn btn-primary">Learn more</a>
+        </div>
+    </section>
+    <section class="ir-section container text-center">
+        <div class="ir-content">
+            <h2>Clone by Abdughafur Khujzoda</h2>
+            <p>See other clone websites from GitHub.</p>
+            <a href="https://github.com/Abdughafur/WebClones" class="btn btn-primary">GitHub</a>
+        </div>
+    </section>
+
+    <section class="newsletter-section container">
+        <div class="newsletter-card">
+            <div class="newsletter-text">
+                <h3>Get the latest news from Google in your inbox</h3>
+                <p>Sign up to receive top stories from the week — from product announcements, to everyday tips.</p>
+            </div>
+            <button class="btn btn-outline">Subscribe</button>
+        </div>
+    </section>
+
+    <footer class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Brand Resource Center</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact us</a></li>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Investor Relations</a></li>
+                    <li><a href="#">Locations</a></li>
+                    <li><a href="#">Press resources</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Outreach and initiatives</h4>
+                <ul>
+                    <li><a href="#">Accessibility</a></li>
+                    <li><a href="#">Crisis Response</a></li>
+                    <li><a href="#">Google.org</a></li>
+                    <li><a href="#">Google for Health</a></li>
+                    <li><a href="#">Grow with Google</a></li>
+                    <li><a href="#">Learning</a></li>
+                    <li><a href="#">Public Policy</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Research and technology</h4>
+                <ul>
+                    <li><a href="#">Google AI</a></li>
+                    <li><a href="#">Google Cloud</a></li>
+                    <li><a href="#">Google DeepMind</a></li>
+                    <li><a href="#">Google for Developers</a></li>
+                    <li><a href="#">Google Labs</a></li>
+                    <li><a href="#">Google Research</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>More about us</h4>
+                <ul>
+                    <li><a href="#">Around the globe</a></li>
+                    <li><a href="#">Human rights</a></li>
+                    <li><a href="#">Safety Center</a></li>
+                    <li><a href="#">Supplier responsibility</a></li>
+                    <li><a href="#">Transparency Center</a></li>
+                    <li><a href="#">Transparency Report</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-logo">Google</div>
+            <div class="footer-links">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+            </div>
+            <div class="footer-utilities">
+                <a href="#"><span class="material-symbols-outlined">help</span> Help</a>
+                <a href="#">English <span class="material-symbols-outlined"
+                        style="font-size: 16px;">arrow_drop_down</span></a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
+
+
+<!-- Cloned 11.07.2026 -->
+<!-- Created by Abdughafur Khujzoda -->
