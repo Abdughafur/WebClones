@@ -36,6 +36,7 @@ Each project focuses on recreating real-world websites with responsive layouts, 
 | ---------- | ---------------------- |
 | 2026-06-20 | QuickShare for Windows |
 | 2026-07-07 | Wallfever |
+| 2026-07-11 | Google Company Info |
 
 > New projects will be added as they are completed.
 
