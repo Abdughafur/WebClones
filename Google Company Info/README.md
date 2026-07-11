@@ -44,11 +44,30 @@ Google-Company-Info-Clone/
 │
 ├── index.html
 ├── style.css
+├── README.md
+│
 ├── pics/
-├── screenshots/
-│   ├── OriginalPage.png
-│   └── MyClone.png
-└── README.md
+│   ├── hero.png
+│   ├── careers.png
+│   ├── locations.png
+│   ├── around.png
+│   ├── contact.png
+│   ├── deepmind.png
+│   ├── research.png
+│   ├── labs.png
+│   ├── dev.png
+│   ├── cloud.png
+│   ├── io.png
+│   ├── googleplex.png
+│   ├── com.png
+│   ├── grow.png
+│   ├── sustainability.png
+│   ├── google.org.png
+│   └── accessibility.png
+│
+└── screenshots/
+    ├── OriginalPage.png
+    └── MyClone.png
 ```
 
 ## 📸 Comparison
